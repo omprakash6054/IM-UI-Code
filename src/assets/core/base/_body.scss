@@ -1,0 +1,61 @@
+@import "../variables/colors";
+
+
+
+
+html, body { 
+    height: 100%; 
+}
+body { margin: 0; font-family: 'Avenir'; }
+
+.mat-progress-bar-buffer {
+    background-color: white;
+}
+
+.mat-toolbar{
+    padding: 0 !important;
+}
+
+.full-height{
+    height: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.align-right{
+    text-align: right;
+}
+.no-padding {
+    padding: 0;
+}
+
+.second-title{
+    color: $accent-lighter-color;
+}
+
+.mat-horizontal-stepper-header-container{
+    display: none !important;
+}
+
+mat-error{
+    color: rgb(223, 98, 98) !important;
+}
+
+mat-checkbox {
+
+}
+
+body{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.footer{
+    font-family: 'Avenir-Book';
+    font-size: 14px;
+    font-weight: 500;
+    background: #000000;
+    color: #fff;
+    line-height: 20px;
+}

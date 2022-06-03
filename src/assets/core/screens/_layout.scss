@@ -1,0 +1,201 @@
+@import "../variables/colors";
+
+app-step-one-form{
+    margin: 0 auto;
+    display: block;
+    padding: 0;
+}
+
+.main-content {
+    background-color: $accent-darker-color;
+    padding-bottom: 100px;
+
+    .bloc-title{
+      .thumb-rect{
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        margin-top: 10px;
+        width: 30px;
+        height: 51px;
+        background: $primary-color;
+      }
+      .main-title {
+        display: inline-block;
+        color: white;
+        font-size: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 24px;
+        vertical-align: middle;
+    }
+    }
+
+    .main-container {
+        background: white;        
+    }
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: white;
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+  
+}
+.mat-drawer-container {
+  background-color: #fff !important;
+  color: rgba(0, 0, 0, 0.87);
+  padding-top: 5px;
+}
+
+.active {
+  color: #666;;
+  border-bottom: 5px solid #04AA6D;
+  padding-bottom: 19px;
+}
+
+.label-logo {
+  color: black;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.mat-sidenav-content{
+  overflow: hidden !important;
+}
+
+.footer{
+    background: black;
+    display: block;
+    .text-footer {
+      // margin-left: -90px;
+    }
+}
+
+
+.padding-tb-30 {
+  padding: 30px 0;
+}
+.footer-padding {
+  padding: 15px 0px;
+}
+.text-footer {
+  text-align: right !important;
+}
+.all-answers {
+  height: 360px;
+  overflow-y: scroll;
+  overflow-x: hidden; 
+}
+
+#step5-scroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #474C55;
+}
+
+#step5-scroll::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #474C55;
+}
+
+#step5-scroll::-webkit-scrollbar-thumb
+{
+	background-color: #c5c5c5;
+}
+
+// Handle buttons appropriately, with respect to line-height
+.mat-raised-button, .mat-stroked-button, .mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 .65em;
+  min-width: 3em;
+  line-height: 36.4px
+}
+
+.mat-standard-chip {
+  padding: .5em .85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons', 'Material Icons';  
+  .mat-badge-content {
+    font-family: 'Avenir-Book';
+  }
+}
+.mat-placeholder-required {
+  float: right;
+  color: red;
+}
+.mat-focus-indicator.mat-stepper-next.mat-raised-button.mat-button-base.mat-accent {
+  background: #52a624;
+}
+.mat-progress-bar-fill::after{
+  background-color: #414141;
+}
+.mat-progress-bar-buffer {
+  background-color: #E9E9E9;
+}
+@media screen and (max-width: 600px) {
+.hidden-xs{
+  display: none;
+}
+.text-footer {
+  text-align: center !important;
+}
+.complete-btn{
+  width: 100% !important;
+  margin-top: 25px !important;
+}
+.main-content .bloc-title .thumb-rect {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  margin-top: 10px;
+  width: 15px;
+  height: 51px;
+  background: #4ba21c;
+  float: left;
+}
+.main-content {
+  padding-bottom: 50px;
+}
+.main-content .bloc-title .main-title {
+  display: contents;
+  float: right;
+  font-size: 28px;
+}
+.bloc-title {
+  margin: 25px auto;
+}
+.step-one-container .form-title {
+  display: block;
+  margin-top: 0;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 400;
+  padding: 0px;
+}
+}
+

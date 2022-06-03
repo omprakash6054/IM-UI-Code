@@ -1,0 +1,75 @@
+@import "../variables/colors";
+
+.mat-toolbar {
+    background: #FAFAFA !important;
+    .step-title{
+        color: #000000;
+        font-size: 16px;
+    }
+    .steps {
+        color: #000;
+        font-size: 16px;
+        font-weight: 800;
+    }
+}
+
+.text-accent {
+    color: $accent-color;
+    text-decoration: none;
+}
+.navigation-items {
+    padding-top: 5px;
+    display: inline-block;
+    list-style: none;
+    background: transparent;
+    border: none;
+    margin-bottom: -19px;
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 800;
+        color: #000;
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $accent-color;
+        }
+    }
+}
+
+.logo-nav{
+    display: inline-block;
+    list-style: none;
+    background: transparent;
+    border: none;
+    float: right;
+}
+
+.is-mobile{
+    display: none;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    mat-sidenav {
+        position: fixed !important;
+        height: 100%;
+        left: 0;
+    }
+    .navigation-items{
+        display: none;
+    }
+
+    .is-mobile{
+        display: block;
+    }
+
+    
+}
+
+
+

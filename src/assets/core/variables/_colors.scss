@@ -1,0 +1,42 @@
+@import "../../theme/theme";
+
+$primary-color: map-get($theme-primary, main);
+$primary-lighter-color: map-get($theme-primary, lighter);
+$primary-darker-color:  map-get($theme-primary, darker);
+$primary-200-color:  map-get($theme-primary, 200);
+
+$accent-color: map-get($theme-accent, main);
+$accent-lighter-color: map-get($theme-accent, lighter);
+$accent-darker-color: map-get($theme-accent, darker);
+$accent-200-color: map-get($theme-accent, 200);
+
+$grey-color : #F7F9FA;
+$grey-lighter-color : #EAEEF0;
+$grey-darker-color : #b0b3b4;
+$grey-medium-color : #E4E4E4;
+$grey-bg-lighter-color: #FAFAFA;
+$grey-expanded-color : #f3f3f3;
+
+$blue-grey-lighter-color : #E2F5FE;
+
+$warn-color: map-get($theme-warn, main);
+$warn-lighter-color: map-get($theme-warn, lighter);
+$warn-200-color: map-get($theme-warn, 200);
+
+$success-color : green;
+$success-lighter-color : lightgreen;
+$info-color: orange;
+$info-darker-color: darkorange;
+
+$custom-blue-color: #349eeb;
+$sidenav-color : #515E66;
+$toolbar-color : #121B50;
+$btn-menu-color : #0C1026;
+
+$custom-blue-dark-color: #c8d1e0;
+
+
+$custom-pink-color: #AF2547;
+$badge-color : #FF0040;
+
+

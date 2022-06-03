@@ -1,0 +1,64 @@
+// We need to use ::ng-deep to overcome view encapsulation
+@import "../variables/colors";
+.custom-ngx-slider .ngx-slider .ngx-slider-bar {
+  background: #ffe4d1;
+  height: 5px;
+}
+.custom-ngx-slider .ngx-slider .ngx-slider-selection {
+  background: red;
+}
+
+.custom-ngx-slider .ngx-slider .ngx-slider-pointer {
+  width: 10px;
+  height: 15px;
+  top: auto; /* to remove the default positioning */
+  bottom: 0;
+  background-color: $primary-color !important;
+}
+
+.custom-ngx-slider .ngx-slider .ngx-slider-pointer:after {
+  display: none;
+}
+
+.custom-ngx-slider .ngx-slider .ngx-slider-bubble {
+  bottom: 14px;
+}
+
+.custom-ngx-slider .ngx-slider .ngx-slider-limit {
+  font-weight: bold;
+  color: red;
+}
+
+.custom-ngx-slider .ngx-slider .ngx-slider-tick {
+  width: 3px;
+  height: 15px;
+  margin-left: 4px;
+  border-radius: 0;
+  background: #ccc;
+  top: -1px;
+}
+
+.custom-ngx-slider .ngx-slider .ngx-slider-tick.ngx-slider-selected {
+  background: $primary-color;
+}
+
+.ngx-slider .ngx-slider-bar{
+  height: 10px !important;
+}
+
+.ngx-slider .ngx-slider-pointer{
+  background-color: $primary-color !important;
+}
+
+
+.ngx-slider .ngx-slider-bar{
+  background-color: #c3bebe3d !important;
+}
+/*.ngx-slider.animate .ngx-slider-bubble{
+  background: black;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+  margin: 10px 10px 10px -7px;
+}*/
+

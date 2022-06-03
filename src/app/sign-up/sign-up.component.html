@@ -1,0 +1,350 @@
+<div class="main-content avenirBook">
+  <div class="container">
+    <div class="">
+      <div class="row">
+        <div class="col bloc-title">
+          <span class="thumb-rect"></span>
+          <h1 class="main-title">Are you ready for a challenge ?</h1>
+        </div>
+      </div>
+      <mat-toolbar>
+        <button mat-stroked-button class="full-height" *ngIf="stepOne"><span class="steps">STEP 1</span></button>
+        <button mat-stroked-button class="full-height" *ngIf="stepTwo"><span class="steps">STEP 2</span></button>
+        <button mat-stroked-button class="full-height" *ngIf="stepThree"><span class="steps">STEP 3</span></button>
+        <button mat-stroked-button class="full-height" *ngIf="stepFoor"><span class="steps">STEP 4</span></button>
+        <button mat-stroked-button class="full-height" *ngIf="stepFive"><span class="steps">STEP 5</span></button>
+        <mat-divider vertical="true" class="full-height"></mat-divider>
+        <h1 class="step-title" *ngIf="stepOne">Sign up</h1>
+        <h1 class="step-title" *ngIf="stepTwo">Tell us about your self</h1>
+        <h1 class="step-title" *ngIf="stepThree">Skills</h1>
+        <h1 class="step-title" *ngIf="stepFoor">Review</h1>
+        <h1 class="step-title" *ngIf="stepFive">Complete!</h1>
+      </mat-toolbar>
+      <mat-progress-bar mode="determinate" [value]="completePercent" color="primary"></mat-progress-bar>
+      <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstStepForm">
+          <div class="step-one-container">
+            <div class="row p-1">
+              <div class="col-lg-8">
+                <div class="row bloc-title">
+                  <div class="col-lg-7 col-md-7 col-sm-12">
+                    <h1 class="form-title">Sign up to begin <br>your journey with us</h1>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center step-one-content-form">
+                  <form [formGroup]="firstStepForm" class="step-one-form">
+                    <div class="row pb-3">
+                      <div class="col">
+                        <mat-form-field class="full-width">
+                          <input matInput placeholder="First name" formControlName="firstName"  pattern="[a-zA-Z ]*">
+                          <mat-error *ngIf="firstStepForm.controls['firstName'].hasError('required')">
+                            First name is <strong>required</strong> 
+                          </mat-error>
+                           <mat-error *ngIf="firstStepForm.controls['lastName'].hasError('pattern')">
+                            <strong>Please Enter</strong> Only Characters
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field class="full-width">
+                          <input matInput placeholder="Last name" formControlName="lastName" pattern="[a-zA-Z ]*">
+                          <mat-error *ngIf="firstStepForm.controls['lastName'].hasError('required')">
+                            Last name is <strong>required</strong>
+                          </mat-error>
+                          <mat-error *ngIf="firstStepForm.controls['lastName'].hasError('pattern')">
+                            <strong>Please Enter</strong> Only Characters
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row pb-3">
+                      <div class="col">
+                        <mat-form-field class="full-width">
+                          <input type="url" matInput placeholder="GitHub URL" formControlName="github" pattern="[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)">
+                          <mat-error *ngIf="firstStepForm.controls['github'].hasError('required')">
+                            <strong>Please Enter</strong> GitHub url
+                          </mat-error>
+                          <mat-error *ngIf="firstStepForm.controls['github'].hasError('pattern')">
+                            <strong>URL Required</strong> in Proper Format Ex: https://www.github.com
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field class="full-width">
+                          <input type="email" matInput placeholder="Email Address" formControlName="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+                          <mat-error *ngIf="firstStepForm.controls['email'].hasError('required')">
+                            <strong>Email Address Required</strong> 
+                          </mat-error>
+                          <mat-error *ngIf="firstStepForm.controls['email'].hasError('pattern')">
+                            <strong>Please Enter Email Address</strong> in Proper Format
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div class="row pb-3">
+                      <div class="col-lg-6">
+                        <mat-form-field class="full-width">
+                          <mat-select placeholder="country" formControlName="state">
+                            <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+                              {{ state.name }}
+                            </mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="firstStepForm.controls['state'].hasError('required')">
+                            Country is <strong>required</strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <mat-checkbox class="box-margin" color="primary">
+                        <label>
+                          I would like to receive information regarding this important message. Lorem ipsum dolor sit
+                          amet consectetur adipisicing elit. Praesentium suscipit eum facilis! Facere blanditiis reiciendis distinctio voluptates deserunt
+                          nihil ducimus corrupti, nobis totam mollitia perferendis incidunt ipsum rem earum cumque?
+                        </label>
+                      </mat-checkbox>
+                      <mat-checkbox class="box-margin" color="primary">Allow us to take a peek at your code and ways of thinking
+                      </mat-checkbox>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-4 hidden-xs" >
+                <img class="img-step-one" src="../../../assets/images/step-1.png" alt="" width="100%">
+              </div>
+            </div>
+
+            <mat-divider class="m-auto"></mat-divider>
+
+            <div class="row p-3">
+              <div class="col-lg-10 col-md-12 no-padding">
+                <button mat-raised-button matStepperPrevious type="submit" class="complete-btn">Back</button>
+              </div>
+              <div class="col-lg-2 col-md-12 no-padding">
+                  <button mat-raised-button matStepperNext color="accent" class="complete-btn float-end" (click)="submitFirstStep()"
+                    [disabled]="!firstStepForm.valid">Next</button>
+                </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="secondStepForm">
+          <div class="step-one-container">
+            <div class="row p-1">
+              <div class="col-lg-8">
+                <div class="row bloc-title">
+                  <div class="col-lg-7">
+                    <h1 class="form-title">Tell us about yourself <br> and your coding experience</h1>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center step-one-content-form">
+                  <form [formGroup]="secondStepForm" class="step-one-form">
+                    <div class="row">
+                      <div class="col">
+                        <mat-label>How did you get started with web development ?</mat-label> <span class="mat-placeholder-required">*</span>
+                        <mat-form-field class="full-width" appearance="outline">
+                          <textarea matInput formControlName="text1"  placeholder="Enter text here"></textarea>
+                          <mat-error *ngIf="secondStepForm.controls['text1'].hasError('required')">
+                            <strong>This Field is required </strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <mat-label>What do you engjoy about working on a Scrum team ?</mat-label> <span class="mat-placeholder-required">*</span>
+                        <mat-form-field class="full-width" appearance="outline">
+                          <textarea matInput formControlName="text2"></textarea>
+                          <mat-error *ngIf="secondStepForm.controls['text2'].hasError('required')">
+                            <strong>This Field is required </strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <mat-label>What technincal trends are you most interested in ?</mat-label>  <span class="mat-placeholder-required">*</span>
+
+                        <mat-form-field class="full-width" appearance="outline">
+                          <textarea matInput formControlName="text3"></textarea>
+                          <mat-error *ngIf="secondStepForm.controls['text3'].hasError('required')">
+                            <strong>This Field is required </strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-4 hidden-xs">
+                <img class="img-step-one" src="../../../assets/images/step-2.png" width="100%" alt="">
+              </div>
+            </div>
+
+            <mat-divider class="m-auto"></mat-divider>
+            <div class="row p-3">
+              <div class="col-lg-10 col-md-12 no-padding">
+                <button mat-raised-button matStepperPrevious type="submit" class="complete-btn">Back</button>
+              </div>
+              <div class="col-lg-2 col-md-12 no-padding">
+                  <button mat-raised-button matStepperNext color="accent" class="complete-btn float-end" (click)="step2()"
+                    [disabled]="!secondStepForm.valid">Next</button>
+                </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="thirdStepForm">
+          <div class="step-one-container">
+            <div class="row p-1">
+              <div class="col-lg-9">
+                <div class="row bloc-title">
+                  <div class="col-lg-7">
+                    <h1 class="form-title">Describe your current<br> programming skill set </h1>
+                  </div>
+                </div>
+
+                <div class="row justify-content-center step-one-content-form">
+                  <form [formGroup]="thirdStepForm" class="step-one-form">
+                    <div class="row padding-tb-30">
+                      <div class="col">
+                        <mat-label>Javascript</mat-label>
+                        <ngx-slider [(value)]="value1" [options]="options" formControlName="value1"></ngx-slider>
+                      </div>
+                    </div>
+                    <div class="row padding-tb-30">
+                      <div class="col">
+                        <mat-label>Cascading Stylesheets (CSS) & Sass/Scss</mat-label>
+                        <ngx-slider [(value)]="value2" [options]="options" formControlName="value2"></ngx-slider>
+                      </div>
+                    </div>
+                    <div class="row padding-tb-30">
+                      <div class="col">
+                        <mat-label>jQuery</mat-label>
+                        <ngx-slider [(value)]="value3" [options]="options" formControlName="value3"></ngx-slider>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-lg-3 hidden-xs">
+                <img class="img-step-one" src="../../../assets/images/step-3.png" width="100%" alt="">
+              </div>
+            </div>
+
+            <mat-divider class="m-auto"></mat-divider>
+
+            <div class="row p-3">
+              <div class="col-lg-10 col-md-12 no-padding">
+                <button mat-raised-button matStepperPrevious type="submit" class="complete-btn">Back</button>
+              </div>
+              <div class="col-lg-2 col-md-12 no-padding">
+                <button mat-raised-button matStepperNext color="accent" class="complete-btn flex-end" (click)="step3()" [disabled]="!thirdStepForm.valid">Next</button>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+
+        <mat-step>
+          <div class="step-one-container">
+            <div class="row p-3 full-height">
+              <div class="col-lg-9">
+                <div class="row bloc-title">
+                  <div class="col-lg-6">
+                    <h1 class="form-title" *ngIf="userInfo">Thank you {{userInfo.firstName}}! Plaese review your answers</h1>
+                  </div>
+                </div>
+                <div class="all-answers" id="step5-scroll">
+                  <div *ngIf="userInfo">
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>First name</label>
+                      <p class="second-title">{{userInfo.firstName}}</p>
+                    </div>
+
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>Last name</label>
+                      <p class="second-title">{{userInfo.lastName}}</p>
+                    </div>
+
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>GitHub URL</label>
+                      <p class="second-title">{{userInfo.github}}</p>
+                    </div>
+
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>Country</label>
+                      <p class="second-title">{{userInfo.state}}</p>
+                    </div>
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>How did you get started with Web Development?</label>
+                      <p class="second-title">{{userInfo.desc}}</p>
+                    </div>
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>What do you engjoy about working on a Scrum team ?</label>
+                      <p class="second-title">{{userInfo.desc1}}</p>
+                    </div>
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>What technincal trends are you most interested in ?</label>
+                      <p class="second-title">{{userInfo.desc2}}</p>
+                    </div>
+                  </div>
+                  <div *ngIf="sliderValues">
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>Javascript</label>
+                      <p class="second-title">{{sliderValues.value1}}</p>
+                    </div>
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>Cascading Stylesheets (CSS) & Sass/SCSS</label>
+                      <p class="second-title">{{sliderValues.value2}}</p>
+                    </div>
+                    <div class="row justify-content-center step-one-content-form">
+                      <label>jQuery</label>
+                      <p class="second-title">{{sliderValues.value3}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 hidden-xs">
+                <img class="img-step-one" src="../../../assets/images/step-4.png" width="100%" alt="">
+              </div>
+            </div>
+
+            <mat-divider class="m-auto"></mat-divider>
+
+            <div class="row p-3">
+              <div class="col-lg-10 col-md-12 no-padding">
+                <button mat-raised-button matStepperPrevious class="complete-btn" type="submit">Back</button>
+              </div>
+              <div class="col-lg-2 col-md-12 no-padding">
+                <button mat-raised-button matStepperNext color="accent" class="complete-btn flex-end" (click)="step4()">Next</button>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+        <mat-step>
+          <div class="container justify-content-center">
+            <div>
+              <img class="img-check" src="../../../assets/images/check.png" width="100%" alt="">
+            </div>
+            <div class="row">
+              <div class="col">
+                <h1 class="title">Your submission was receivde!</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <h1 class="subtitle">Your submission was receivde!</h1>
+              </div>
+            </div>
+          </div>
+        </mat-step>
+      </mat-stepper>
+    </div>
+  </div>
+</div>
